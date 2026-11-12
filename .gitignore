@@ -41,3 +41,12 @@ example
 # generated native folders
 /ios
 /android
+.vercel
+
+# gizli / yedek
+.env
+.env.*
+!.env.example
+*.bak
+*.bak[0-9]
+.bak_md/

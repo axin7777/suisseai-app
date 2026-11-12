@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "suisseai-app",
+    "name": "SuisseAI",
     "slug": "suisseai-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,16 +8,23 @@
     "scheme": "suisseaiapp",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.suisseai.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "SuisseAI benötigt Kamerazugriff, um Fotos für die Bildanalyse aufzunehmen.",
+        "NSPhotoLibraryUsageDescription": "SuisseAI benötigt Zugriff auf deine Fotos, um Bilder zur Analyse auszuwählen."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.suisseai.app"
     },
     "web": {
       "output": "static",
@@ -28,15 +35,28 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 160
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "SuisseAI benötigt Zugriff auf deine Fotos, um Bilder zur Analyse auszuwählen.",
+          "cameraPermission": "SuisseAI benötigt Kamerazugriff, um Fotos für die Bildanalyse aufzunehmen."
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f6c3b8e3-1ad9-4b08-b0a7-98c76fc99a5b"
+      }
     }
   }
 }
